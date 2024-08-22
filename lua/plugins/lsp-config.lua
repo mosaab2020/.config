@@ -20,13 +20,17 @@ return {
     "neovim/nvim-lspconfig",
     config = function()
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
+      local on_attach = require('cmp_nvim_lsp').on_attach
+      local util = require('lspconfig/util')
 
       local lspconfig = require("lspconfig")
       lspconfig.lua_ls.setup({
+        on_attach = on_attach,
         capabilities = capabilities,
 
       })
       lspconfig.tsserver.setup({
+        on_attach = on_attach,
         capabilities = capabilities,
         init_options = {
           preferences = {
@@ -35,16 +39,28 @@ return {
         }
       })
       lspconfig.html.setup({
+        on_attach = on_attach,
         capabilities = capabilities
       })
       lspconfig.cssls.setup({
+        on_attach = on_attach,
         capabilities = capabilities
       })
       lspconfig.vuels.setup({
+        on_attach = on_attach,
         capabilities = capabilities
       })
       lspconfig.eslint.setup({
+        on_attach = on_attach,
         capabilities = capabilities
+      })
+      lspconfig.gopls.setup({
+        on_attach = on_attach,
+        capabilities = capabilities,
+        cmd = { "gopls" },
+        filetypes = { "go", "gomod", "gowork", "gotmpl" },
+        root_dir = util.root_pattern("go.work", "go.mod", ".git"),
+
       })
       -- lspconfig.rust_analyzer.setup({
       --   capabilities = capabilities,
