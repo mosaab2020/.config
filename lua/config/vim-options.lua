@@ -16,7 +16,8 @@ o.cursorline = true
 o.breakindent = true
 o.scrolloff = 5
 
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
+g.loaded_netrw = 1
+g.loaded_netrwPlugin = 1
 vim.wo.signcolumn = "yes"
--- vim.o.signcolumn = 'number'
+
+g.have_nerd_font = true
