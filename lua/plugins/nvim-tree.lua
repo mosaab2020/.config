@@ -1,6 +1,7 @@
 return {
   'nvim-tree/nvim-tree.lua',
-  vim.keymap.set('n', '<C-n>', ':NvimTreeToggle<CR>', { silent = true }),
+  -- vim.keymap.set('n', '<C-n>', ':NvimTreeToggle<CR>', { silent = true }),
+  lazy = true,
   config = function()
     require("nvim-tree").setup({
       sort = {
@@ -8,7 +9,7 @@ return {
       },
       view = {
         width = 30,
-        side = "right"
+        side = "right",
       },
       renderer = {
         group_empty = true,

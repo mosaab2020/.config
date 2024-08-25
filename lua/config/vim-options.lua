@@ -16,8 +16,12 @@ o.cursorline = true
 o.breakindent = true
 o.scrolloff = 5
 
-g.loaded_netrw = 1
-g.loaded_netrwPlugin = 1
+-- g.loaded_netrw = 1
+-- g.loaded_netrwPlugin = 1
 vim.wo.signcolumn = "yes"
 
 g.have_nerd_font = true
+
+vim.opt.fileformat = 'unix'
+
+
