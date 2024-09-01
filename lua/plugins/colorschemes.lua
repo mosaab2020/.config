@@ -90,10 +90,10 @@ return {
     end
   },
   {
-    "slugbyte/lackluster.nvim",
+    "mosaab2020/lackluster.nvim",
     priority = 1000,
     config = function()
       vim.cmd.colorscheme "lackluster"
     end
-  },
+  }
 }
