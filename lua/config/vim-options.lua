@@ -2,6 +2,7 @@ local o = vim.opt
 local g = vim.g
 
 g.mapleader = " "
+g.have_nerd_font = true
 
 o.expandtab = true
 o.smartindent = true
@@ -15,13 +16,8 @@ o.mouse = ''
 o.cursorline = true
 o.breakindent = true
 o.scrolloff = 5
+o.fileformat = 'unix'
 
 -- g.loaded_netrw = 1
 -- g.loaded_netrwPlugin = 1
 vim.wo.signcolumn = "yes"
-
-g.have_nerd_font = true
-
-vim.opt.fileformat = 'unix'
-
-

@@ -18,36 +18,6 @@ return {
     end
   },
   {
-    "catppuccin/nvim",
-    name = "catppuccin",
-    priority = 1000,
-    lazy = true,
-    config = function()
-      -- vim.cmd.colorscheme "catppuccin"
-    end
-  },
-  {
-    "kdheepak/monochrome.nvim",
-    priority = 1000,
-    lazy = true,
-    config = function()
-      -- vim.cmd.colorscheme "monochrome"
-    end
-  },
-  {
-    "rafamadriz/neon",
-    priority = 1000,
-    lazy = true,
-    config = function()
-      vim.g.neon_style = "dark"
-      vim.g.neon_italic_keyword = false
-      vim.g.neon_italic_function = false
-      vim.g.neon_transparent = false
-
-      -- vim.cmd.colorscheme "neon"
-    end
-  },
-  {
     "typicode/bg.nvim",
     lazy = false
   },
@@ -62,29 +32,6 @@ return {
     "navarasu/onedark.nvim",
     priority = 1000,
     lazy = true,
-    config = function()
-      -- vim.cmd.colorscheme "onedark"
-    end
-  },
-  {
-    'AlexvZyl/nordic.nvim',
-    priority = 1000,
-    lazy = true,
-    config = function()
-      -- require 'nordic'.load()
-    end
-  },
-  {
-    "Th3Whit3Wolf/one-nvim",
-    lazy = true,
-    config = function()
-      -- vim.cmd.colorscheme "one-nvim"
-    end
-  },
-  {
-    "olimorris/onedarkpro.nvim",
-    priority = 1000, -- Ensure it loads first
-    name = "onedarkpro",
     config = function()
       -- vim.cmd.colorscheme "onedark"
     end

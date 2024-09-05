@@ -11,6 +11,24 @@ return {
       vim.keymap.set('n', '<leader><leader>', builtin.buffers, {})
       vim.keymap.set('n', '<leader>fc', builtin.colorscheme, {})
       vim.keymap.set('n', '<leader>fh', builtin.highlights, {})
+
+      require("telescope").setup {
+        defaults = {
+          theme = "center",
+          sorting_strategy = "ascending",
+          layout_config = {
+            horizontal = {
+              prompt_position = "top",
+              preview_width = 0.45,
+            },
+            vertical = {
+              mirror = false,
+            },
+            width = 0.67,
+            height = 0.70,
+          },
+        },
+      }
     end
   },
   {
@@ -42,9 +60,9 @@ return {
       -- IMPORTANT!: this is only a showcase of how you can set default options!
       require("telescope").setup {
         extensions = {
+
           file_browser = {
-            theme = "dropdown",
-            previewer = false,
+            previewer = true,
             -- disables netrw and use telescope-file-browser in its place
             hijack_netrw = true,
           },

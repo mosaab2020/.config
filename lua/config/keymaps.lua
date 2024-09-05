@@ -15,10 +15,21 @@ k.set('n', '<C-l>', '<C-w>l', {})
 k.set('i', 'jj', '<Esc>', {})
 
 -- Escape termainl mode with Escape
-k.set('t', '<Esc>', "<C-\\><C-n>", { silent = true })
+k.set('t', '<Esc>', '<C-\\><C-n>', { silent = true })
 
 -- Disable search highlight
 k.set('n', '<leader>/', ':noh<CR>', { silent = true })
+
+-- Copy to system clipboard
+k.set('v', '<leader>y', '"+y', { silent = true })
+
+-- Vertical resize
+k.set('n', '<A-k>', ':vertical resize +5<CR>', { silent = true })
+k.set('n', '<A-j>', ':vertical resize -5<CR>', { silent = true })
+
+-- Horizontal resize
+k.set('n', '<A-l>', ':horizontal  resize +5<CR>', { silent = true })
+k.set('n', '<A-h>', ':horizontal resize -5<CR>', { silent = true })
 
 -- Tabs
 k.set('n', '<Tab>', ':tabnext<CR>', { silent = true })
@@ -39,8 +50,4 @@ k.set('n', '<leader>hs', ':horizontal split<CR>', { silent = true })
 -- Enable extra colorschemes
 k.set('n', '<leader>ec', function()
   require("nord")
-  require("nordic")
-  require("catppuccin")
-  require("monochrome")
-  require("neon")
 end, {})
