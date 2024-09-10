@@ -12,7 +12,7 @@ return {
     },
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "tsserver", "html", "cssls", "vuels" }
+        ensure_installed = { "lua_ls", "html", "cssls", "vuels" }
       })
     end
   },
@@ -27,9 +27,8 @@ return {
       lspconfig.lua_ls.setup({
         on_attach = on_attach,
         capabilities = capabilities,
-
       })
-      lspconfig.tsserver.setup({
+      lspconfig.ts_ls.setup({
         on_attach = on_attach,
         capabilities = capabilities,
         init_options = {
@@ -64,7 +63,15 @@ return {
         cmd = { "gopls" },
         filetypes = { "go", "gomod", "gowork", "gotmpl" },
         root_dir = util.root_pattern("go.work", "go.mod", ".git"),
+      })
+      lspconfig.bashls.setup({
+        on_attach = on_attach,
+        capabilities = capabilities,
 
+      })
+      lspconfig.clangd.setup({
+        on_attach = on_attach,
+        capabilities = capabilities,
       })
       -- lspconfig.rust_analyzer.setup({
       --   capabilities = capabilities,

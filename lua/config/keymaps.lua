@@ -5,11 +5,6 @@ k.set('n', '<C-h>', '<C-w>h', {})
 k.set('n', '<C-j>', '<C-w>j', {})
 k.set('n', '<C-k>', '<C-w>k', {})
 k.set('n', '<C-l>', '<C-w>l', {})
--- vim.api.nvim_set_keymap('n', '<C-h>', ':wincmd h<CR>', {noremap = true, silent = true})
--- vim.api.nvim_set_keymap('n', '<C-j>', ':wincmd j<CR>', {noremap = true, silent = true})
--- vim.api.nvim_set_keymap('n', '<C-k>', ':wincmd k<CR>', {noremap = true, silent = true})
--- vim.api.nvim_set_keymap('n', '<C-l>', ':wincmd l<CR>', {noremap = true, silent = true})
-
 
 -- Escape insert mode with jj
 k.set('i', 'jj', '<Esc>', {})
@@ -24,12 +19,12 @@ k.set('n', '<leader>/', ':noh<CR>', { silent = true })
 k.set('v', '<leader>y', '"+y', { silent = true })
 
 -- Vertical resize
-k.set('n', '<A-k>', ':vertical resize +5<CR>', { silent = true })
-k.set('n', '<A-j>', ':vertical resize -5<CR>', { silent = true })
+k.set('n', '<leader>=', ':vertical resize +5<CR>', { silent = true })
+k.set('n', '<leader>-', ':vertical resize -5<CR>', { silent = true })
 
 -- Horizontal resize
-k.set('n', '<A-l>', ':horizontal  resize +5<CR>', { silent = true })
-k.set('n', '<A-h>', ':horizontal resize -5<CR>', { silent = true })
+k.set('n', '<leader>j', ':horizontal  resize +5<CR>', { silent = true })
+k.set('n', '<leader>k', ':horizontal resize -5<CR>', { silent = true })
 
 -- Tabs
 k.set('n', '<Tab>', ':tabnext<CR>', { silent = true })
@@ -50,4 +45,6 @@ k.set('n', '<leader>hs', ':horizontal split<CR>', { silent = true })
 -- Enable extra colorschemes
 k.set('n', '<leader>ec', function()
   require("nord")
+  require("onedark")
+  require("vscode")
 end, {})

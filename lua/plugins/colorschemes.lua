@@ -24,6 +24,7 @@ return {
   {
     "Mofiqul/vscode.nvim",
     priority = 1000,
+    lazy = true,
     config = function()
       -- vim.cmd.colorscheme "vscode"
     end
@@ -39,6 +40,7 @@ return {
   {
     "mosaab2020/lackluster.nvim",
     priority = 1000,
+    dev = true,
     config = function()
       vim.cmd.colorscheme "lackluster"
     end

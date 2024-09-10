@@ -5,10 +5,4 @@ return {
       require('nvim-ts-autotag').setup({})
     end
   },
-  {
-    'm4xshen/autoclose.nvim',
-    config = function()
-      require("autoclose").setup()
-    end
-  }
 }

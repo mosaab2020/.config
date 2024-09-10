@@ -20,4 +20,10 @@ require("config.keymaps")
 -- require("test")
 
 -- Setup lazy.nvim
-require("lazy").setup("plugins")
+require("lazy").setup("plugins",
+  {
+    dev = {
+      path = "~/Documents/github/",
+    },
+  }
+)
