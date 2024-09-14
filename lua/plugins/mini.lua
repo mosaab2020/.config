@@ -7,6 +7,7 @@ return {
     -- require('mini.starter').setup()
     -- require('mini.cursorword').setup()
     -- require('mini.jump2d').setup()
+    -- require('mini.surround').setup()
     require('mini.pairs').setup()
     require('mini.ai').setup({
       -- Table with textobject id as fields, textobject specification as values.
