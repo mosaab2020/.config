@@ -3,7 +3,10 @@ return {
     "hrsh7th/cmp-nvim-lsp",
   },
   {
-    'L3MON4D3/LuaSnip',
+    "L3MON4D3/LuaSnip",
+    -- follow latest release.
+    version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+    build = "make install_jsregexp",
     dependencies = {
       'saadparwaiz1/cmp_luasnip',
       'rafamadriz/friendly-snippets',
@@ -26,6 +29,7 @@ return {
           end,
         },
         window = {
+          -- max_width = 20,     -- Set the maximum width here
           -- completion = cmp.config.window.bordered(),
           -- completion = {
           --   border = "single",
@@ -45,6 +49,15 @@ return {
         --     vim_item.abbr = string.sub(vim_item.abbr, 6, 20)
         --     return vim_item
         --   end
+        -- },
+        -- formatting = {
+        --   format = function(entry, vim_item)
+        --     -- Remove the menu/kind field to reduce width
+        --     vim_item.menu = ""
+        --     vim_item.kind = ""
+        --
+        --     return vim_item
+        --   end,
         -- },
         sources = cmp.config.sources({
           { name = 'nvim_lsp' },

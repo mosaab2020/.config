@@ -15,8 +15,14 @@ k.set('t', '<Esc>', '<C-\\><C-n>', { silent = true })
 -- Disable search highlight
 k.set('n', '<leader>/', ':noh<CR>', { silent = true })
 
+-- Exec system command
+k.set('n', '<leader>!', '<Esc>:! ', {})
+
 -- Copy to system clipboard
 k.set('v', '<leader>y', '"+y', { silent = true })
+
+-- Delete without copying
+k.set({ 'n', 'v' }, '<leader>d', '"_d', { noremap = true })
 
 -- Vertical resize
 k.set('n', '<leader>=', ':vertical resize +5<CR>', { silent = true })
@@ -41,6 +47,10 @@ k.set('n', '<leader>cd', ':cd %:h | wincmd k | pwd<CR>', { silent = true })
 -- Spliting
 k.set('n', '<leader>vs', ':vertical split<CR>', { silent = true })
 k.set('n', '<leader>hs', ':horizontal split<CR>', { silent = true })
+
+-- Disable autocomplete
+k.set('n', '<leader>dc', ':lua require("cmp").setup.buffer { enabled = false }<CR>', {})
+
 
 -- Enable extra colorschemes
 k.set('n', '<leader>ec', function()

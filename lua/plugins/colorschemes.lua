@@ -40,8 +40,24 @@ return {
   {
     "mosaab2020/lackluster.nvim",
     priority = 1000,
-    dev = true,
+    dev = false,
     config = function()
+      local lackluster = require("lackluster")
+      -- require('nvim-web-devicons').setup({
+      --   color_icons = true,
+      --   override = {
+      --     ["default_icon"] = {
+      --       color = lackluster.color.lack,
+      --       name = "Default",
+      --     }
+      --   }
+      -- })
+      lackluster.setup({
+        tweak_ui = {
+          disable_undercurl = false,    -- set to true if you want underline instead of undercurl
+          enable_end_of_buffer = false, -- set to true to show the end_of_buffer ~ symbols in the gutter
+        },
+      })
       vim.cmd.colorscheme "lackluster"
     end
   }
