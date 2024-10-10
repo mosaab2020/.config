@@ -9,6 +9,10 @@ k.set('n', '<C-l>', '<C-w>l', {})
 -- Escape insert mode with jj
 k.set('i', 'jj', '<Esc>', {})
 
+-- Move in insert mode
+k.set('i', '<C-h>', '<left>', { silent = false, noremap = true })
+k.set('i', '<C-l>', '<right>', { silent = false, noremap = true })
+
 -- Escape termainl mode with Escape
 k.set('t', '<Esc>', '<C-\\><C-n>', { silent = true })
 
@@ -51,6 +55,8 @@ k.set('n', '<leader>hs', ':horizontal split<CR>', { silent = true })
 -- Disable autocomplete
 k.set('n', '<leader>dc', ':lua require("cmp").setup.buffer { enabled = false }<CR>', {})
 
+-- Require and setup a plugin
+k.set('n', '<leader>rp', ':lua require("").setup()<left><left><left><left><left><left><left><left><left><left>')
 
 -- Enable extra colorschemes
 k.set('n', '<leader>ec', function()

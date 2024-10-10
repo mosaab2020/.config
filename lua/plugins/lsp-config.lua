@@ -1,6 +1,7 @@
 return {
   {
     "williamboman/mason.nvim",
+    event = "VeryLazy",
     config = function()
       require("mason").setup()
     end
@@ -11,13 +12,13 @@ return {
       auto_install = true,
     },
     config = function()
-      require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "html", "cssls", "vuels" }
-      })
+      require("mason-lspconfig").setup()
+      -- ensure_installed = { "lua_ls", "html", "cssls", "vuels" }
     end
   },
   {
     "neovim/nvim-lspconfig",
+    event = "VeryLazy",
     config = function()
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
       local on_attach = require('cmp_nvim_lsp').on_attach
@@ -45,10 +46,6 @@ return {
         on_attach = on_attach,
         capabilities = capabilities
       })
-      lspconfig.vuels.setup({
-        on_attach = on_attach,
-        capabilities = capabilities
-      })
       lspconfig.eslint.setup({
         on_attach = on_attach,
         capabilities = capabilities
@@ -73,6 +70,10 @@ return {
         on_attach = on_attach,
         capabilities = capabilities,
       })
+      -- lspconfig.vuels.setup({
+      --   on_attach = on_attach,
+      --   capabilities = capabilities
+      -- })
       -- lspconfig.rust_analyzer.setup({
       --   capabilities = capabilities,
       --   filetypes = {"rust"},

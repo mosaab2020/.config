@@ -15,6 +15,14 @@ return {
       vim.keymap.set('n', '<leader>fh', builtin.highlights, {})
 
       require("telescope").setup {
+        extensions = {
+          file_browser = {
+            previewer = true,
+            -- disables netrw and use telescope-file-browser in its place
+            hijack_netrw = true,
+            hidden = true,
+          },
+        },
         defaults = {
           theme = "center",
           sorting_strategy = "ascending",
@@ -36,15 +44,15 @@ return {
   {
     "nvim-telescope/telescope-ui-select.nvim",
     config = function()
-      require("telescope").setup {
-        extensions = {
-          ["ui-select"] = {
-            require("telescope.themes").get_dropdown {
-            }
-          }
-        }
-      }
       require("telescope").load_extension("ui-select")
+      -- require("telescope").setup {
+      --   extensions = {
+      --     ["ui-select"] = {
+      --       require("telescope.themes").get_dropdown {
+      --       }
+      --     }
+      --   }
+      -- }
     end
   },
   {
@@ -52,26 +60,30 @@ return {
     dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
     config = function()
       vim.keymap.set("n", "<space>fb", ":Telescope file_browser<CR>")
+      require("telescope").load_extension "file_browser"
 
       -- Alternatively, using lua API
       -- vim.keymap.set("n", "<leader>fb", function()
-      --   require("telescope").extensions.file_browser.file_browser()
+      --   require("telescope").extensions.file_browser.file_browser({
+      --     previewer = true,
+      --     -- disables netrw and use telescope-file-browser in its place
+      --     hijack_netrw = true,
+      --     hidden = true,
+      --   })
       -- end)
 
       -- You don't need to set any of these options.
       -- IMPORTANT!: this is only a showcase of how you can set default options!
-      require("telescope").setup {
-        extensions = {
-
-          file_browser = {
-            previewer = true,
-            -- disables netrw and use telescope-file-browser in its place
-            hijack_netrw = true,
-            hidden = true,
-          },
-        },
-      }
-      require("telescope").load_extension "file_browser"
+      -- require("telescope").setup {}
+      -- extensions = {
+      --
+      --   file_browser = {
+      --     previewer = true,
+      --     -- disables netrw and use telescope-file-browser in its place
+      --     hijack_netrw = true,
+      --     hidden = true,
+      --   },
+      -- },
     end
   }
 
