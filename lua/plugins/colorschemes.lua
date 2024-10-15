@@ -3,18 +3,27 @@ return {
     "mosaab2020/lackluster.nvim",
     priority = 1000,
     dev = false,
+    dependencies = {
+      "nvim-web-devicons",
+    },
     config = function()
       vim.cmd.colorscheme "lackluster"
-      -- local lackluster = require("lackluster")
-      -- require('nvim-web-devicons').setup({
-      --   color_icons = true,
-      --   override = {
-      --     ["default_icon"] = {
-      --       color = lackluster.color.lack,
-      --       name = "Default",
-      --     }
-      --   }
-      -- })
+
+      -- nvim-web-devicons does not play well with colorschemes so if lackluster style icons
+      -- run the following setup before you load lackluster.
+      local lackluster = require("lackluster")
+      -- !must called setup() before setting the colorscheme!
+      require('nvim-web-devicons').setup({
+        color_icons = false,
+        override = {
+          ["default_icon"] = {
+            icon = "",
+            color = lackluster.color.gray4,
+            name = "Default",
+          },
+        },
+      })
+      vim.cmd.colorscheme("lackluster")
     end
   },
   {
