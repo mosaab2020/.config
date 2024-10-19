@@ -7,11 +7,17 @@ return {
       "nvim-web-devicons",
     },
     config = function()
-      vim.cmd.colorscheme "lackluster"
-
       -- nvim-web-devicons does not play well with colorschemes so if lackluster style icons
       -- run the following setup before you load lackluster.
       local lackluster = require("lackluster")
+      lackluster.setup({
+        tweak_highlight = {
+          ["TelescopeBorder"] = {
+            overwrite = true,
+            link = "WinSeparator"
+          }
+        }
+      })
       -- !must called setup() before setting the colorscheme!
       require('nvim-web-devicons').setup({
         color_icons = false,
