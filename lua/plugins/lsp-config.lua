@@ -13,12 +13,16 @@ return {
     },
     config = function()
       require("mason-lspconfig").setup()
+      opts = {
+        auto_install = true,
+      }
       -- ensure_installed = { "lua_ls", "html", "cssls", "vuels" }
     end
   },
   {
     "neovim/nvim-lspconfig",
-    event = "VeryLazy",
+    -- event = "VeryLazy",
+    event = { "BufReadPost", "BufNewFile", "BufReadPre" },
     config = function()
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
       local on_attach = require('cmp_nvim_lsp').on_attach
@@ -70,21 +74,6 @@ return {
         on_attach = on_attach,
         capabilities = capabilities,
       })
-      -- lspconfig.vuels.setup({
-      --   on_attach = on_attach,
-      --   capabilities = capabilities
-      -- })
-      -- lspconfig.rust_analyzer.setup({
-      --   capabilities = capabilities,
-      --   filetypes = {"rust"},
-      --   settings = {
-      --     ['rust_analyzer'] = {
-      --       cargo = {
-      --         allFeatures = true,
-      --       },
-      --     },
-      --   },
-      -- })
 
       vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
       vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})

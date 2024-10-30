@@ -6,6 +6,7 @@ return {
   },
   {
     "MunifTanjim/nui.nvim",
+    enabled = false,
   },
   {
     "nvimdev/indentmini.nvim",
