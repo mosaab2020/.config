@@ -19,7 +19,7 @@ o.breakindent = true
 o.scrolloff = 4
 o.fileformat = 'unix'
 
--- g.loaded_netrw = 1
--- g.loaded_netrwPlugin = 1
+g.loaded_netrw = 1
+g.loaded_netrwPlugin = 1
 vim.wo.signcolumn = "yes"
 vim.loader.enable()
