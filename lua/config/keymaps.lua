@@ -45,8 +45,12 @@ k.set('n', '<leader>i', ':Inspect<CR>', { silent = true })
 
 -- Open config
 k.set('n', '<leader>oc', ':e $MYVIMRC | :cd %:p:h | wincmd k | pwd<CR>', { silent = true })
+
 -- Change directory of the parent file
 k.set('n', '<leader>cd', ':cd %:h | wincmd k | pwd<CR>', { silent = true })
+
+-- this opens a little floating window
+vim.keymap.set('n', '<leader>oe', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
 
 -- Spliting
 k.set('n', '<leader>vs', ':vertical split<CR>', { silent = true })

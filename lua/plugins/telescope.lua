@@ -4,7 +4,7 @@ return {
     dependencies = {
       'nvim-lua/plenary.nvim',
     },
-    tag = '0.1.8',
+    -- tag = '0.1.8',
     config = function()
       -- Telescope keymaps
       local builtin = require('telescope.builtin')
