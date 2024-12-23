@@ -74,6 +74,15 @@ return {
         on_attach = on_attach,
         capabilities = capabilities,
       })
+      lspconfig.pyright.setup({
+        on_attach = on_attach,
+        capabilities = capabilities,
+        filetypes = { "python" }
+      })
+      lspconfig.ruff.setup({
+        on_attach = on_attach,
+        capabilities = capabilities,
+      })
 
       vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
       vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})

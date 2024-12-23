@@ -1,14 +1,5 @@
 return {
   {
-    "akinsho/bufferline.nvim",
-    version = "*",
-    enabled = false,
-  },
-  {
-    "MunifTanjim/nui.nvim",
-    enabled = false,
-  },
-  {
     "nvimdev/indentmini.nvim",
     config = function()
       require("indentmini").setup() -- use default config

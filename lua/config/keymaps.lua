@@ -49,7 +49,7 @@ k.set('n', '<leader>oc', ':e $MYVIMRC | :cd %:p:h | wincmd k | pwd<CR>', { silen
 -- Change directory of the parent file
 k.set('n', '<leader>cd', ':cd %:h | wincmd k | pwd<CR>', { silent = true })
 
--- this opens a little floating window
+-- This opens a little floating window
 vim.keymap.set('n', '<leader>oe', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
 
 -- Spliting
