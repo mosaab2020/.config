@@ -75,18 +75,64 @@ return {
         capabilities = capabilities,
       })
       -- lspconfig.pyright.setup({
-      --   on_attach = on_attach,
-      --   capabilities = capabilities,
-      --   filetypes = { "python" }
+      --   single_file_support = true,
+      --   settings = {
+      --     python = {
+      --       analysis = {
+      --         typeCheckingMode = "off", -- Disable type checking
+      --         diagnosticSeverityOverrides = {
+      --           analyzeUnannotatedFunctions     = true,
+      --           disableBytesTypePromotions      = true,
+      --           strictParameterNoneValue        = true,
+      --           enableTypeIgnoreComments        = true,
+      --           enableReachabilityAnalysis      = false,
+      --           strictListInference             = false,
+      --           strictDictionaryInference       = false,
+      --           strictSetInference              = false,
+      --           deprecateTypingAliases          = false,
+      --           enableExperimentalFeatures      = false,
+      --           reportMissingTypeStubs          = "none",
+      --           reportInvalidTypeForm           = "warning",
+      --
+      --           reportGeneralTypeIssues         = "none",
+      --           reportUnusedImport              = "none",
+      --           reportUnusedVariable            = "none",
+      --           reportMissingImports            = "none",
+      --           reportMissingModuleSource       = "none",
+      --           reportUndefinedVariable         = "none",
+      --           reportUnnecessaryIsInstance     = "none",
+      --           reportUnboundVariable           = "none",
+      --           reportUnknownArgument           = "none",
+      --           reportUnknownAttribute          = "none",
+      --           reportUnknownCallSignature      = "none",
+      --           reportUnknownMagicVariable      = "none",
+      --           reportUnknownMember             = "none",
+      --           reportUnknownParameter          = "none",
+      --           reportUnknownVariableType       = "none",
+      --           reportUnnecessaryCast           = "none",
+      --           reportUnnecessarySelf           = "none",
+      --           reportUntypedClassDecorator     = "none",
+      --           reportUntypedFunctionDecorator  = "none",
+      --           reportUntypedLambda             = "none",
+      --           reportUsedPriorImport           = "none",
+      --           reportWildcardImportFromLibrary = "none",
+      --         },
+      --       },
+      --     },
+      --     on_attach = on_attach,
+      --     capabilities = capabilities,
+      --     filetypes = { "python" },
+      --   }
       -- })
-      lspconfig.ruff.setup({
-        on_attach = on_attach,
-        capabilities = capabilities,
-      })
+      -- lspconfig.ruff.setup({
+      --   -- on_attach = on_attach,
+      --   -- capabilities = capabilities,
+      -- })
       lspconfig.pylsp.setup({
         on_attach = on_attach,
         capabilities = capabilities,
       })
+
 
       vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
       vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
