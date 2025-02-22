@@ -74,6 +74,10 @@ return {
         on_attach = on_attach,
         capabilities = capabilities,
       })
+      lspconfig.sqls.setup({
+        on_attach = on_attach,
+        capabilities = capabilities,
+      })
       -- lspconfig.pyright.setup({
       --   single_file_support = true,
       --   settings = {

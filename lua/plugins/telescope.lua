@@ -16,6 +16,14 @@ return {
       vim.keymap.set('n', '<leader>fh', builtin.highlights, {})
       vim.keymap.set('n', '<leader>fk', builtin.keymaps, {})
 
+
+      -- Custom keymap for searching directories
+      vim.keymap.set('n', '<leader>fi', function()
+        builtin.find_files({
+          find_command = { 'fd', '--type', 'd' },
+        })
+      end, {})
+
       require("telescope").setup {
         extensions = {
           file_browser = {

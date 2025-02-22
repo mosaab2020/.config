@@ -1,6 +1,7 @@
 return {
   {
     "nvimdev/indentmini.nvim",
+    enabled = false,
     config = function()
       require("indentmini").setup() -- use default config
     end,

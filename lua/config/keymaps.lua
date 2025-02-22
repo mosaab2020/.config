@@ -7,7 +7,7 @@ k.set('n', '<C-k>', '<C-w>k', {})
 k.set('n', '<C-l>', '<C-w>l', {})
 
 -- Escape insert mode with jj
--- k.set('i', 'jj', '<Esc>', {})
+k.set('i', 'jj', '<Esc>', {})
 
 -- Move in insert mode
 k.set('i', '<C-h>', '<left>', { silent = false, noremap = true })
