@@ -29,6 +29,7 @@ return {
       local util = require('lspconfig/util')
 
       local lspconfig = require("lspconfig")
+      -- local lspconfig = vim.lsp.config
       lspconfig.lua_ls.setup({
         on_attach = on_attach,
         capabilities = capabilities,
