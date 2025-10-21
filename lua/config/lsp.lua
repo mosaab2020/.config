@@ -1,0 +1,11 @@
+vim.lsp.enable({
+  "clangd",
+  "lua_ls",
+  "sqls",
+  "pylsp",
+  "ts_ls",
+  "cssls",
+  "eslint",
+  "bashls",
+  "html",
+})

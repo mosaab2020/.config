@@ -18,6 +18,7 @@ o.cursorline = true
 o.breakindent = true
 o.scrolloff = 4
 o.fileformat = 'unix'
+o.swapfile = false
 
 g.loaded_netrw = 1
 g.loaded_netrwPlugin = 1

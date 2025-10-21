@@ -8,11 +8,14 @@ return {
   },
   {
     "williamboman/mason-lspconfig.nvim",
+    enabled = true,
     opts = {
       auto_install = true,
     },
     config = function()
-      require("mason-lspconfig").setup()
+      require("mason-lspconfig").setup({
+        automatic_enable = false,
+      })
       opts = {
         auto_install = true,
       }
@@ -21,64 +24,69 @@ return {
   },
   {
     "neovim/nvim-lspconfig",
+    enabled = false,
     -- event = "VeryLazy",
     event = { "BufReadPost", "BufNewFile", "BufReadPre" },
     config = function()
-      local capabilities = require('cmp_nvim_lsp').default_capabilities()
-      local on_attach = require('cmp_nvim_lsp').on_attach
-      local util = require('lspconfig/util')
+      vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
+      vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
+      vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, {})
 
-      local lspconfig = require("lspconfig")
+      -- local capabilities = require('cmp_nvim_lsp').default_capabilities()
+      -- local on_attach = require('cmp_nvim_lsp').on_attach
+      -- local util = require('lspconfig/util')
+
+      -- local lspconfig = require("lspconfig")
       -- local lspconfig = vim.lsp.config
-      lspconfig.lua_ls.setup({
-        on_attach = on_attach,
-        capabilities = capabilities,
-      })
-      lspconfig.ts_ls.setup({
-        on_attach = on_attach,
-        capabilities = capabilities,
-        init_options = {
-          preferences = {
-            disableSuggestions = true,
-          }
-        }
-      })
-      lspconfig.html.setup({
-        on_attach = on_attach,
-        capabilities = capabilities
-      })
-      lspconfig.cssls.setup({
-        on_attach = on_attach,
-        capabilities = capabilities
-      })
-      lspconfig.eslint.setup({
-        on_attach = on_attach,
-        capabilities = capabilities
-      })
-      lspconfig.jsonls.setup({
-        on_attach = on_attach,
-        capabilities = capabilities
-      })
-      lspconfig.gopls.setup({
-        on_attach = on_attach,
-        capabilities = capabilities,
-        cmd = { "gopls" },
-        filetypes = { "go", "gomod", "gowork", "gotmpl" },
-        root_dir = util.root_pattern("go.work", "go.mod", ".git"),
-      })
-      lspconfig.bashls.setup({
-        on_attach = on_attach,
-        capabilities = capabilities,
-
-      })
-      lspconfig.clangd.setup({
-        on_attach = on_attach,
-        capabilities = capabilities,
-      })
-      lspconfig.sqls.setup({
-        on_attach = on_attach,
-        capabilities = capabilities,
-      })
+      -- lspconfig.lua_ls.setup({
+      --   on_attach = on_attach,
+      --   capabilities = capabilities,
+      -- })
+      -- lspconfig.ts_ls.setup({
+      --   on_attach = on_attach,
+      --   capabilities = capabilities,
+      --   init_options = {
+      --     preferences = {
+      --       disableSuggestions = true,
+      --     }
+      --   }
+      -- })
+      -- lspconfig.html.setup({
+      --   on_attach = on_attach,
+      --   capabilities = capabilities
+      -- })
+      -- lspconfig.cssls.setup({
+      --   on_attach = on_attach,
+      --   capabilities = capabilities
+      -- })
+      -- lspconfig.eslint.setup({
+      --   on_attach = on_attach,
+      --   capabilities = capabilities
+      -- })
+      -- lspconfig.jsonls.setup({
+      --   on_attach = on_attach,
+      --   capabilities = capabilities
+      -- })
+      -- lspconfig.gopls.setup({
+      --   on_attach = on_attach,
+      --   capabilities = capabilities,
+      --   cmd = { "gopls" },
+      --   filetypes = { "go", "gomod", "gowork", "gotmpl" },
+      --   root_dir = util.root_pattern("go.work", "go.mod", ".git"),
+      -- })
+      -- lspconfig.bashls.setup({
+      --   on_attach = on_attach,
+      --   capabilities = capabilities,
+      --
+      -- })
+      -- lspconfig.clangd.setup({
+      --   on_attach = on_attach,
+      --   capabilities = capabilities,
+      -- })
+      -- lspconfig.sqls.setup({
+      --   on_attach = on_attach,
+      --   capabilities = capabilities,
+      -- })
       -- lspconfig.pyright.setup({
       --   single_file_support = true,
       --   settings = {
@@ -133,15 +141,10 @@ return {
       --   -- on_attach = on_attach,
       --   -- capabilities = capabilities,
       -- })
-      lspconfig.pylsp.setup({
-        on_attach = on_attach,
-        capabilities = capabilities,
-      })
-
-
-      vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
-      vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
-      vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, {})
+      -- lspconfig.pylsp.setup({
+      --   on_attach = on_attach,
+      --   capabilities = capabilities,
+      -- })
     end
   }
 }
