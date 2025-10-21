@@ -56,9 +56,6 @@ vim.keymap.set('n', '<leader>oe', vim.diagnostic.open_float, { desc = 'Open floa
 k.set('n', '<leader>vs', ':vertical split<CR>', { silent = true })
 k.set('n', '<leader>hs', ':horizontal split<CR>', { silent = true })
 
--- Disable autocomplete
-k.set('n', '<leader>dc', ':lua require("cmp").setup.buffer { enabled = false }<CR>', {})
-
 -- Require and setup a plugin
 k.set('n', '<leader>rp', ':lua require("").setup()<left><left><left><left><left><left><left><left><left><left>')
 
