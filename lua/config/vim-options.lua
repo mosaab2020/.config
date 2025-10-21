@@ -20,6 +20,7 @@ o.scrolloff = 4
 o.fileformat = 'unix'
 o.swapfile = false
 
+-- o.winborder = "none"
 g.loaded_netrw = 1
 g.loaded_netrwPlugin = 1
 vim.wo.signcolumn = "yes"
