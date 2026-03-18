@@ -25,8 +25,9 @@ return {
     vim.keymap.set('n', '<leader>gf', vim.lsp.buf.format, {})
     vim.keymap.set('n', '<leader>w', function()
       -- Format the current buffer using LSP
-      -- Save the current file
       vim.lsp.buf.format()
+
+      -- Save the current file
       vim.cmd('write')
     end, { noremap = true, silent = true })
   end

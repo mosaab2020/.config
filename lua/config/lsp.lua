@@ -8,4 +8,5 @@ vim.lsp.enable({
   "eslint",
   "bashls",
   "html",
+  "vala_ls"
 })

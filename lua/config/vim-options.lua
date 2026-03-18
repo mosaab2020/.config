@@ -19,6 +19,7 @@ o.breakindent = true
 o.scrolloff = 4
 o.fileformat = 'unix'
 o.swapfile = false
+o.termguicolors = true
 
 -- o.winborder = "none"
 g.loaded_netrw = 1
