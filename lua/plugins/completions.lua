@@ -19,6 +19,7 @@ return {
       },
       { "hrsh7th/cmp-nvim-lsp", lazy = true },
       { "hrsh7th/cmp-buffer",   lazy = true },
+      { "hrsh7th/cmp-path",     lazy = true },
     },
     config = function()
       -- Set up nvim-cmp.
@@ -33,13 +34,13 @@ return {
           end,
         },
         -- window = {
-        -- max_width = 20,     -- Set the maximum width here
-        -- completion = cmp.config.window.bordered(),
-        -- completion = {
-        --   border = "single",
-        --   winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,SemanticFloatBorder:Pmenu,Search:None",
-        -- },
-        -- documentation = cmp.config.window.bordered(),
+        --   max_width = 20, -- Set the maximum width here
+        --   completion = cmp.config.window.bordered(),
+        --   completion = {
+        --     border = "single",
+        --     winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,SemanticFloatBorder:Pmenu,Search:None",
+        --   },
+        --   documentation = cmp.config.window.bordered(),
         -- },
 
         mapping = cmp.mapping.preset.insert({
@@ -53,6 +54,7 @@ return {
           { name = 'nvim_lsp' },
           { name = 'luasnip' }, -- For luasnip users.
           { name = 'buffer' },
+          { name = 'path' },
         }, {})
       })
     end,

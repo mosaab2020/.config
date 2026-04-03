@@ -14,6 +14,7 @@ return {
         null_ls.builtins.formatting.clang_format,
         null_ls.builtins.formatting.htmlbeautifier,
         null_ls.builtins.formatting.mdformat,
+        -- null_ls.builtins.formatting.beautysh,
         null_ls.builtins.diagnostics.mypy,
         -- require("none-ls.formatting.ruff"),
         -- require("none-ls.diagnostics.ruff"),
